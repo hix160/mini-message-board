@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <h1>Messages</h1>
+    <a href="/new">Post a New Message</a>
+    <% if (messages && messages.length) { %>
+      <% for (let i = 0; i < messages.length; i++) { %>
+        <div>
+          <div><strong><%= messages[i].text %></strong></div>
+          <div>By: <%= messages[i].user %></div>
+          <div>Added: <%= messages[i].added %></div>
+          <a href="/message/<%= i %>">Open</a> <!-- Add open button -->
+        </div>
+        <hr />
+      <% } %>
+    <% } else { %>
+      <p>No messages to display</p>
+    <% } %>
+  </body>
+</html>
